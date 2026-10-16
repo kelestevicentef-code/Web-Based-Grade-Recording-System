@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="Far Eastern Polytechnic College seal">
+  <title>Far Eastern Polytechnic College</title>
+  <defs>
+    <!-- circular text paths -->
+    <path id="arcTop" d="M 24 100 A 76 76 0 0 1 176 100"/>
+    <path id="arcBottom" d="M 26 100 A 74 74 0 0 0 174 100"/>
+  </defs>
+
+  <!-- sunburst rim -->
+  <path d="M 94.8 14.0 L 100.0 -1.0 L 105.2 14.0 Z" fill="#f2c200"/>
+  <path d="M 109.8 14.4 L 117.5 0.5 L 120.1 16.2 Z" fill="#14612f"/>
+  <path d="M 124.5 17.4 L 134.5 5.1 L 134.3 21.0 Z" fill="#f2c200"/>
+  <path d="M 138.5 22.9 L 150.5 12.5 L 147.5 28.1 Z" fill="#14612f"/>
+  <path d="M 151.3 30.8 L 164.9 22.6 L 159.3 37.5 Z" fill="#f2c200"/>
+  <path d="M 162.5 40.7 L 177.4 35.1 L 169.2 48.7 Z" fill="#14612f"/>
+  <path d="M 171.9 52.5 L 187.5 49.5 L 177.1 61.5 Z" fill="#f2c200"/>
+  <path d="M 179.0 65.7 L 194.9 65.5 L 182.6 75.5 Z" fill="#14612f"/>
+  <path d="M 183.8 79.9 L 199.5 82.5 L 185.6 90.2 Z" fill="#f2c200"/>
+  <path d="M 186.0 94.8 L 201.0 100.0 L 186.0 105.2 Z" fill="#14612f"/>
+  <path d="M 185.6 109.8 L 199.5 117.5 L 183.8 120.1 Z" fill="#f2c200"/>
+  <path d="M 182.6 124.5 L 194.9 134.5 L 179.0 134.3 Z" fill="#14612f"/>
+  <path d="M 177.1 138.5 L 187.5 150.5 L 171.9 147.5 Z" fill="#f2c200"/>
+  <path d="M 169.2 151.3 L 177.4 164.9 L 162.5 159.3 Z" fill="#14612f"/>
+  <path d="M 159.3 162.5 L 164.9 177.4 L 151.3 169.2 Z" fill="#f2c200"/>
+  <path d="M 147.5 171.9 L 150.5 187.5 L 138.5 177.1 Z" fill="#14612f"/>
+  <path d="M 134.3 179.0 L 134.5 194.9 L 124.5 182.6 Z" fill="#f2c200"/>
+  <path d="M 120.1 183.8 L 117.5 199.5 L 109.8 185.6 Z" fill="#14612f"/>
+  <path d="M 105.2 186.0 L 100.0 201.0 L 94.8 186.0 Z" fill="#f2c200"/>
+  <path d="M 90.2 185.6 L 82.5 199.5 L 79.9 183.8 Z" fill="#14612f"/>
+  <path d="M 75.5 182.6 L 65.5 194.9 L 65.7 179.0 Z" fill="#f2c200"/>
+  <path d="M 61.5 177.1 L 49.5 187.5 L 52.5 171.9 Z" fill="#14612f"/>
+  <path d="M 48.7 169.2 L 35.1 177.4 L 40.7 162.5 Z" fill="#f2c200"/>
+  <path d="M 37.5 159.3 L 22.6 164.9 L 30.8 151.3 Z" fill="#14612f"/>
+  <path d="M 28.1 147.5 L 12.5 150.5 L 22.9 138.5 Z" fill="#f2c200"/>
+  <path d="M 21.0 134.3 L 5.1 134.5 L 17.4 124.5 Z" fill="#14612f"/>
+  <path d="M 16.2 120.1 L 0.5 117.5 L 14.4 109.8 Z" fill="#f2c200"/>
+  <path d="M 14.0 105.2 L -1.0 100.0 L 14.0 94.8 Z" fill="#14612f"/>
+  <path d="M 14.4 90.2 L 0.5 82.5 L 16.2 79.9 Z" fill="#f2c200"/>
+  <path d="M 17.4 75.5 L 5.1 65.5 L 21.0 65.7 Z" fill="#14612f"/>
+  <path d="M 22.9 61.5 L 12.5 49.5 L 28.1 52.5 Z" fill="#f2c200"/>
+  <path d="M 30.8 48.7 L 22.6 35.1 L 37.5 40.7 Z" fill="#14612f"/>
+  <path d="M 40.7 37.5 L 35.1 22.6 L 48.7 30.8 Z" fill="#f2c200"/>
+  <path d="M 52.5 28.1 L 49.5 12.5 L 61.5 22.9 Z" fill="#14612f"/>
+  <path d="M 65.7 21.0 L 65.5 5.1 L 75.5 17.4 Z" fill="#f2c200"/>
+  <path d="M 79.9 16.2 L 82.5 0.5 L 90.2 14.4 Z" fill="#14612f"/>
+
+  <!-- outer ring -->
+  <circle cx="100" cy="100" r="86" fill="#f6fbeb" stroke="#14612f" stroke-width="2.5"/>
+  <!-- red side gems, as on the official seal -->
+  <circle cx="14" cy="100" r="5.5" fill="#b3261e" stroke="#14612f" stroke-width="1"/>
+  <circle cx="186" cy="100" r="5.5" fill="#b3261e" stroke="#14612f" stroke-width="1"/>
+
+  <!-- college name around the ring -->
+  <text font-family="Georgia, 'Times New Roman', serif" font-size="14" font-weight="700" fill="#14612f">
+    <textPath href="#arcTop" startOffset="50%" text-anchor="middle" textLength="230" lengthAdjust="spacingAndGlyphs">FAR EASTERN POLYTECHNIC COLLEGE</textPath>
+  </text>
+  <text font-family="Georgia, 'Times New Roman', serif" font-size="15" font-weight="700" fill="#14612f">
+    <textPath href="#arcBottom" startOffset="50%" text-anchor="middle" textLength="42" lengthAdjust="spacingAndGlyphs">2006</textPath>
+  </text>
+
+  <!-- inner field -->
+  <circle cx="100" cy="100" r="66" fill="#eef8d4" stroke="#14612f" stroke-width="1.4"/>
+  <circle cx="100" cy="100" r="60" fill="#f6fbe6"/>
+
+  <!-- quadrant cross -->
+  <path d="M100 34 V166 M34 100 H166" stroke="#1a1a1a" stroke-width="1.1" opacity="0.85"/>
+
+  <!-- atom (science / technology) -->
+  <g fill="none" stroke="#1a1a1a" stroke-width="1.7">
+    <ellipse cx="100" cy="100" rx="42" ry="15"/>
+    <ellipse cx="100" cy="100" rx="42" ry="15" transform="rotate(60 100 100)"/>
+    <ellipse cx="100" cy="100" rx="42" ry="15" transform="rotate(120 100 100)"/>
+  </g>
+  <g>
+    <circle cx="140" cy="100" r="3" fill="#1a1a1a"/>
+    <circle cx="60" cy="100" r="3" fill="#1a1a1a"/>
+    <circle cx="120" cy="65" r="3" fill="#1a1a1a"/>
+    <circle cx="80" cy="135" r="3" fill="#1a1a1a"/>
+    <circle cx="80" cy="65" r="3" fill="#1a1a1a"/>
+    <circle cx="120" cy="135" r="3" fill="#1a1a1a"/>
+    <circle cx="100" cy="100" r="6" fill="#1a1a1a"/>
+  </g>
+
+  <!-- top-left: torch of learning -->
+  <g>
+    <path d="M62 74 C54 68 52 60 56 54 C62 58 64 56 66 52 C68 60 72 66 62 74 Z" fill="#d92d20"/>
+    <path d="M62 74 C58 70 57 66 58 62 C61 64 62 63 63 61 C64 65 66 69 62 74 Z" fill="#f2c200"/>
+    <path d="M68 76 C78 72 85 76 88 84 C80 86 72 84 68 76 Z" fill="#1e40af"/>
+    <path d="M54 78 C52 80 52 83 54 85 L64 80 Z" fill="#1e40af"/>
+  </g>
+
+  <!-- top-right: culinary / hospitality -->
+  <g>
+    <path d="M128 52 C122 52 118 57 119 62 C114 64 114 72 121 73 L139 73 C146 72 146 64 141 62 C142 57 137 52 132 52 Z" fill="#ffffff" stroke="#1e40af" stroke-width="1.8"/>
+    <path d="M122 73 H138 V78 A3 3 0 0 1 135 81 H125 A3 3 0 0 1 122 78 Z" fill="#ffffff" stroke="#1e40af" stroke-width="1.8"/>
+    <path d="M124 79 V84 M130 79 V84 M136 79 V84" stroke="#1e40af" stroke-width="1.4"/>
+  </g>
+
+  <!-- bottom-left: engineering gears -->
+  <g stroke="#6b7280" fill="#9ca3af">
+    <circle cx="62" cy="140" r="9" stroke-width="3" stroke-dasharray="3 3"/>
+    <circle cx="62" cy="140" r="3.4" fill="#ffffff" stroke-width="0"/>
+    <circle cx="76" cy="150" r="6" stroke-width="2.4" stroke-dasharray="2.4 2.4"/>
+    <circle cx="76" cy="150" r="2.2" fill="#ffffff" stroke-width="0"/>
+  </g>
+
+  <!-- bottom-right: open book -->
+  <g fill="#ffffff" stroke="#1a1a1a" stroke-width="1.6" stroke-linejoin="round">
+    <path d="M100 138 C108 132 118 131 126 133 V146 C118 144 108 145 100 150 Z"/>
+    <path d="M100 138 C92 132 82 131 74 133 V146 C82 144 92 145 100 150 Z"/>
+    <path d="M100 138 V150" stroke-width="1.2"/>
+    <path d="M106 136 C112 133 119 133 123 134 M77 134 C82 133 89 133 94 136" stroke-width="0.7" fill="none"/>
+  </g>
+</svg>

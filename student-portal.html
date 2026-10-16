@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Portal — FEPC Grade Recorder</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- School header: seal logo top-left + college details -->
+<header class="site-header">
+  <a class="site-identity" href="index.html">
+    <img class="site-logo" src="logo.svg" alt="Far Eastern Polytechnic College seal">
+    <span class="site-lines">
+      <span class="site-name">Far Eastern Polytechnic College</span>
+      <span class="site-meta">Brgy. Sta. Lucia, DB81, Dasmariñas City, Cavite</span>
+      <span class="site-meta">Email: fepceduc2006@gmail.com</span>
+      <span class="site-meta">Contact Number: (046) 683-0541 / 0936-448-9326</span>
+    </span>
+  </a>
+  <span class="site-app">Grade Recorder <span class="badge badge-yellow">S.Y. 2026&ndash;2027</span></span>
+</header>
+
+<div class="app">
+
+  <!-- Role-isolated sidebar: student sees ONLY their own pages -->
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <div class="brand-mark">GR</div>
+      <div class="brand-name">Grade Recorder<span>Student Portal</span></div>
+    </div>
+    <nav class="sidebar-nav">
+      <div class="nav-label">Student Menu</div>
+      <a class="nav-link active" href="#grades"><span class="ico">&#9733;</span> My Grades</a>
+      <a class="nav-link" href="#attendance"><span class="ico">&#10003;</span> Attendance</a>
+      <a class="nav-link" href="#progress"><span class="ico">&#8593;</span> Progress Tracker</a>
+      <a class="nav-link" href="#notifications"><span class="ico">&#9873;</span> Notifications</a>
+    </nav>
+    <div class="sidebar-footer">
+      <a class="nav-link" href="index.html"><span class="ico">&#8592;</span> Logout</a>
+    </div>
+  </aside>
+
+  <div class="main">
+    <!-- Top navbar: user name, role badge, notification bell with badge -->
+    <header class="topbar">
+      <div class="topbar-title">Student Portal</div>
+      <div class="topbar-right">
+        <button class="bell" id="bellBtn" title="Notifications">
+          <svg class="bell-icon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+          </svg>
+          <span class="bell-badge">1 new grade</span>
+        </button>
+        <div class="user-meta">
+          <span class="user-name" data-user-name>Juan Dela Cruz</span>
+          <span class="badge">Student</span>
+        </div>
+        <div class="avatar" data-user-initials>JD</div>
+        <a class="btn btn-outline btn-sm" href="index.html">Logout</a>
+      </div>
+    </header>
+
+    <main class="content">
+
+      <div class="page-head">
+        <h1>My Grades</h1>
+        <p>Welcome back, <strong data-user-name>Juan Dela Cruz</strong> &middot; Grade 12 &ndash; Aquarius &middot; S.Y. 2026&ndash;2027</p>
+      </div>
+
+      <div class="alert alert-warning" style="margin-bottom:20px">
+        <span>&#9888;</span>
+        <div>
+          <strong>1 new grade posted</strong>
+          Your Practical Research 2 grade was updated to <strong>72</strong> (below 75). Tap the bell icon for details.
+        </div>
+      </div>
+
+      <div class="stat-grid">
+        <div class="stat-card">
+          <div class="stat-label">General Average</div>            <div class="stat-value">84.0</div>
+            <div class="stat-note">4 subjects, first quarter</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Passing Subjects</div>            <div class="stat-value" style="color:var(--success)">3 / 4</div>
+            <div class="stat-note">Practical Research 2 needs improvement</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Attendance</div>
+          <div class="stat-value">95%</div>
+          <div class="stat-note">38 of 40 days present</div>
+        </div>
+      </div>
+
+      <!-- ============ MY GRADES (read-only) ============ -->
+      <section id="grades">
+        <div class="card">
+          <div class="card-title">
+            <div>
+              <h2>First Quarter Grades</h2>
+              <p class="muted small" style="margin:4px 0 0">Read-only view &mdash; only your own grades are shown.</p>
+            </div>
+            <span class="badge">Read-only</span>
+          </div>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Subject</th>
+                  <th>Teacher</th>
+                  <th class="num">Quiz / Activity Avg.</th>
+                  <th class="num">Final Grade</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Practical Research 2</td>
+                  <td>Mark Villanueva</td>
+                  <td class="num">72</td>
+                  <td class="num grade-fail">72</td>
+                  <td><span class="badge badge-warning">Failing</span></td>
+                </tr>
+                <tr>
+                  <td>Contemporary Philippine Arts from the Regions</td>
+                  <td>Grace Fernandez</td>
+                  <td class="num">92</td>
+                  <td class="num grade-pass">91</td>
+                  <td><span class="badge badge-success">Passing</span></td>
+                </tr>
+                <tr>
+                  <td>Understanding Culture, Society and Politics</td>
+                  <td>Divina Ocampo</td>
+                  <td class="num">86</td>
+                  <td class="num grade-pass">85</td>
+                  <td><span class="badge badge-success">Passing</span></td>
+                </tr>
+                <tr>
+                  <td>Physical Education</td>
+                  <td>Rogelio Panganiban</td>
+                  <td class="num">89</td>
+                  <td class="num grade-pass">88</td>
+                  <td><span class="badge badge-success">Passing</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ ATTENDANCE ============ -->
+      <section id="attendance">
+        <div class="card">
+          <div class="card-title">
+            <div>
+              <h2>My Attendance</h2>
+              <p class="muted small" style="margin:4px 0 0">Record for the first 40 school days.</p>
+            </div>
+          </div>
+          <div class="summary-row" style="margin-bottom:16px">
+            <div class="summary-item"><div class="label">Days Present</div><div class="value" style="color:var(--success)">38</div></div>
+            <div class="summary-item"><div class="label">Days Absent</div><div class="value" style="color:var(--warning)">2</div></div>
+            <div class="summary-item"><div class="label">Attendance Rate</div><div class="value">95%</div></div>
+            <div class="summary-item"><div class="label">Late Arrivals</div><div class="value">1</div></div>
+          </div>
+          <ul class="notif-list">
+            <li><span class="notif-dot read"></span><div><strong>Oct 7, 2026</strong> &mdash; Excused absence (medical certificate submitted)</div></li>
+            <li><span class="notif-dot read"></span><div><strong>Sep 22, 2026</strong> &mdash; Unexcused absence</div></li>
+            <li><span class="notif-dot read"></span><div><strong>Sep 3, 2026</strong> &mdash; Late arrival (7:45 AM)</div></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ============ PROGRESS TRACKER ============ -->
+      <section id="progress">
+        <div class="card">
+          <div class="card-title">
+            <div>
+              <h2>Progress Tracker</h2>
+              <p class="muted small" style="margin:4px 0 0">Overall completion of first-quarter requirements.</p>
+            </div>
+            <span class="badge">75% complete</span>
+          </div>
+
+          <div class="progress-meta"><span>Overall completion</span><span>75%</span></div>
+          <div class="progress"><span style="width:75%"></span></div>
+
+          <div class="progress-meta"><span>Practical Research 2</span><span>60%</span></div>
+          <div class="progress warning"><span style="width:60%"></span></div>
+
+          <div class="progress-meta"><span>Contemporary Philippine Arts from the Regions</span><span>85%</span></div>
+          <div class="progress success"><span style="width:85%"></span></div>
+
+          <div class="progress-meta"><span>Understanding Culture, Society and Politics</span><span>80%</span></div>
+          <div class="progress success"><span style="width:80%"></span></div>
+
+          <div class="progress-meta"><span>Physical Education</span><span>95%</span></div>
+          <div class="progress success"><span style="width:95%"></span></div>
+        </div>
+      </section>
+
+      <!-- ============ NOTIFICATIONS ============ -->
+      <section id="notifications">
+        <div class="card">
+          <div class="card-title">
+            <div>
+              <h2>Notifications</h2>
+              <p class="muted small" style="margin:4px 0 0">You have <strong>1 new grade</strong> update.</p>
+            </div>
+            <span class="badge badge-warning">1 new grade</span>
+          </div>
+          <ul class="notif-list">
+            <li>
+              <span class="notif-dot"></span>
+              <div>
+                <strong>New grade posted: Practical Research 2 &mdash; 72</strong>
+                <div class="notif-time">Posted by Mark Villanueva &middot; Today, 7:32 AM</div>
+              </div>
+            </li>
+            <li>
+              <span class="notif-dot read"></span>
+              <div>
+                <strong>New material shared: Remedial_Lesson_PR2.pdf</strong>
+                <div class="notif-time">From Mark Villanueva &middot; Oct 13, 2026</div>
+              </div>
+            </li>
+            <li>
+              <span class="notif-dot read"></span>
+              <div>
+                <strong>Contemporary Philippine Arts from the Regions grade posted: 91</strong>
+                <div class="notif-time">From Grace Fernandez &middot; Oct 8, 2026</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+    </main>
+  </div>
+</div>
+
+<div id="toast" class="toast"></div>
+
+<script>
+  var toastTimer;
+  function showToast(message, kind) {
+    var toast = document.getElementById('toast');
+    toast.textContent = message;
+    toast.className = 'toast show' + (kind ? ' ' + kind : '');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () { toast.className = 'toast'; }, 2600);
+  }
+
+  /* ---------- RBAC guard: students never land on teacher/admin pages ---------- */
+  (function () {
+    var role = sessionStorage.getItem('fepcRole');
+    var home = {
+      teacher: 'teacher-dashboard.html',
+      administrator: 'admin-dashboard.html',
+      student: 'student-portal.html',
+      parent: 'parent-portal.html'
+    };
+    if (role && role !== 'student') {
+      window.location.replace(home[role] || 'index.html');
+    }
+    var name = sessionStorage.getItem('fepcName');
+    if (name) {
+      document.querySelectorAll('[data-user-name]').forEach(function (el) { el.textContent = name; });
+      var initials = name.split(' ').map(function (w) { return w.charAt(0); }).slice(0, 2).join('');
+      document.querySelector('[data-user-initials]').textContent = initials;
+    }
+  })();
+
+  document.querySelectorAll('.nav-link[href^="#"]').forEach(function (link) {
+    link.addEventListener('click', function () {
+      document.querySelectorAll('.sidebar-nav .nav-link').forEach(function (l) { l.classList.remove('active'); });
+      link.classList.add('active');
+    });
+  });
+
+  document.getElementById('bellBtn').addEventListener('click', function () {
+    showToast('You have 1 new grade: Practical Research 2 — 72.', 'warning');
+    document.querySelector('.bell-badge').style.display = 'none';
+    // Jump to the notifications section (hash navigation works everywhere)
+    window.location.hash = '#notifications';
+    document.querySelectorAll('.sidebar-nav .nav-link').forEach(function (l) { l.classList.remove('active'); });
+    document.querySelector('.nav-link[href="#notifications"]').classList.add('active');
+  });
+</script>
+</body>
+</html>

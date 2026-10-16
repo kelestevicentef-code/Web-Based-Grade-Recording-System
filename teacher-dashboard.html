@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teacher Dashboard — FEPC Grade Recorder</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- School header: seal logo top-left + college details -->
+<header class="site-header">
+  <a class="site-identity" href="index.html">
+    <img class="site-logo" src="logo.svg" alt="Far Eastern Polytechnic College seal">
+    <span class="site-lines">
+      <span class="site-name">Far Eastern Polytechnic College</span>
+      <span class="site-meta">Brgy. Sta. Lucia, DB81, Dasmariñas City, Cavite</span>
+      <span class="site-meta">Email: fepceduc2006@gmail.com</span>
+      <span class="site-meta">Contact Number: (046) 683-0541 / 0936-448-9326</span>
+    </span>
+  </a>
+  <span class="site-app">Grade Recorder <span class="badge badge-yellow">S.Y. 2026&ndash;2027</span></span>
+</header>
+
+<div class="app">
+
+  <!-- Role-isolated sidebar: teacher links only (no Admin/Student/Parent links) -->
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <div class="brand-mark">GR</div>
+      <div class="brand-name">Grade Recorder<span>Teacher Portal</span></div>
+    </div>
+    <nav class="sidebar-nav">
+      <div class="nav-label">Teacher Menu</div>
+      <a class="nav-link active" href="#dashboard"><span class="ico">&#9632;</span> Dashboard</a>
+      <a class="nav-link" href="#scores"><span class="ico">&#9998;</span> Manage Scores</a>
+      <a class="nav-link" href="#attendance"><span class="ico">&#10003;</span> Attendance</a>
+      <a class="nav-link" href="#materials"><span class="ico">&#8679;</span> Upload Materials</a>
+    </nav>
+    <div class="sidebar-footer">
+      <a class="nav-link" href="index.html" id="logoutLink"><span class="ico">&#8592;</span> Logout</a>
+    </div>
+  </aside>
+
+  <div class="main">
+    <!-- Top navbar: user name, role badge, logout -->
+    <header class="topbar">
+      <div class="topbar-title">Teacher Dashboard</div>
+      <div class="topbar-right">
+        <div class="user-meta">
+          <span class="user-name" data-user-name>Mark Villanueva</span>
+          <span class="badge">Teacher</span>
+        </div>
+        <div class="avatar" data-user-initials>MV</div>
+        <a class="btn btn-outline btn-sm" href="index.html">Logout</a>
+      </div>
+    </header>
+
+    <main class="content">
+
+      <!-- ============ DASHBOARD ============ -->
+      <section id="dashboard">
+        <div class="page-head">
+          <h1>Practical Research 2 &mdash; Grade 12 &ndash; Aquarius</h1>
+          <p>S.Y. 2026&ndash;2027 &middot; First Semester &middot; 7 enrolled students</p>
+        </div>
+
+        <!-- AI-Powered Academic Insights widget -->
+        <div class="card ai-card">
+          <div class="card-title">
+            <div>
+              <span class="ai-tag">&#10022; AI-Powered Academic Insights</span>
+              <h2>Performance Risk Analysis</h2>
+            </div>
+            <button class="btn btn-outline btn-sm" data-toast="Recommendations are a visual mockup in this prototype.">View Recommendations</button>
+          </div>
+          <p class="ai-text">Based on recent performance, <strong>3 students are at risk of failing Practical Research 2</strong>. Recommend remedial activities.</p>
+          <p class="ai-text muted small">Flagged: Juan Dela Cruz (72), Joshua Bautista (71), Nadine Cruz (72) &middot; Model refreshed today, 6:15 AM</p>
+        </div>
+
+        <div class="stat-grid">
+          <div class="stat-card">
+            <div class="stat-label">Class Average</div>
+            <div class="stat-value">79.3</div>
+            <div class="stat-note">Before auto-computed final grades</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Passing</div>
+            <div class="stat-value" style="color:var(--success)">4</div>
+            <div class="stat-note">Final grade of 75 and above</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">At Risk of Failing</div>
+            <div class="stat-value" style="color:var(--warning)">3</div>
+            <div class="stat-note">Below 75 final grade</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Average Attendance</div>
+            <div class="stat-value">87%</div>
+            <div class="stat-note">40 school days so far</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ MANAGE SCORES ============ -->
+      <section id="scores">
+        <div class="card">
+          <div class="card-title">
+            <div>
+              <h2>Manage Scores</h2>
+              <p class="muted small" style="margin:4px 0 0">Final Grade = average of Quiz 1 and Quiz 2 (auto-computed).</p>
+            </div>
+            <div style="display:flex; gap:8px">
+              <button class="btn btn-outline" id="uploadPdfBtn">Upload PDF</button>
+              <button class="btn btn-primary" id="autoComputeBtn" data-toast="Saved successfully!">Auto-Compute</button>
+            </div>
+          </div>
+
+          <div class="table-wrap">
+            <table id="gradesTable">
+              <thead>
+                <tr>
+                  <th>Student Name</th>
+                  <th class="num">Quiz 1</th>
+                  <th class="num">Quiz 2</th>
+                  <th class="num">Attendance %</th>
+                  <th class="num">Final Grade</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr data-q1="78" data-q2="66">
+                  <td>Juan Dela Cruz</td>
+                  <td class="num">78</td>
+                  <td class="num">66</td>
+                  <td class="num">95%</td>
+                  <td class="num final-cell">&mdash;</td>
+                </tr>
+                <tr data-q1="90" data-q2="88">
+                  <td>Maria Santos</td>
+                  <td class="num">90</td>
+                  <td class="num">88</td>
+                  <td class="num">100%</td>
+                  <td class="num final-cell">&mdash;</td>
+                </tr>
+                <tr data-q1="95" data-q2="92">
+                  <td>Angel Garcia</td>
+                  <td class="num">95</td>
+                  <td class="num">92</td>
+                  <td class="num">98%</td>
+                  <td class="num final-cell">&mdash;</td>
+                </tr>
+                <tr data-q1="72" data-q2="78">
+                  <td>Pedro Reyes</td>
+                  <td class="num">72</td>
+                  <td class="num">78</td>
+                  <td class="num">80%</td>
+                  <td class="num final-cell">&mdash;</td>
+                </tr>
+                <tr data-q1="68" data-q2="74">
+                  <td>Joshua Bautista</td>
+                  <td class="num">68</td>
+                  <td class="num">74</td>
+                  <td class="num">70%</td>
+                  <td class="num final-cell">&mdash;</td>
+                </tr>
+                <tr data-q1="73" data-q2="71">
+                  <td>Nadine Cruz</td>
+                  <td class="num">73</td>
+                  <td class="num">71</td>
+                  <td class="num">85%</td>
+                  <td class="num final-cell">&mdash;</td>
+                </tr>
+                <tr data-q1="85" data-q2="78">
+                  <td>Samuel Aquino</td>
+                  <td class="num">85</td>
+                  <td class="num">78</td>
+                  <td class="num">93%</td>
+                  <td class="num final-cell">&mdash;</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div style="display:flex; gap:8px; margin-top:16px">
+            <button class="btn btn-primary" data-toast="Saved successfully!">Save Changes</button>
+            <button class="btn btn-outline" data-toast="No changes to discard.">Discard</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ ATTENDANCE ============ -->
+      <section id="attendance">
+        <div class="card">
+          <div class="card-title">
+            <div>
+              <h2>Attendance</h2>
+              <p class="muted small" style="margin:4px 0 0">Record for the first 40 school days.</p>
+            </div>
+            <button class="btn btn-outline btn-sm" data-toast="Attendance record saved successfully!">Save Attendance</button>
+          </div>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Student Name</th>
+                  <th class="num">Days Present</th>
+                  <th class="num">Days Absent</th>
+                  <th class="num">Attendance %</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Juan Dela Cruz</td><td class="num">38</td><td class="num">2</td><td class="num">95%</td><td><span class="badge badge-success">Good</span></td></tr>
+                <tr><td>Maria Santos</td><td class="num">40</td><td class="num">0</td><td class="num">100%</td><td><span class="badge badge-success">Perfect</span></td></tr>
+                <tr><td>Angel Garcia</td><td class="num">39</td><td class="num">1</td><td class="num">98%</td><td><span class="badge badge-success">Good</span></td></tr>
+                <tr><td>Pedro Reyes</td><td class="num">32</td><td class="num">8</td><td class="num">80%</td><td><span class="badge badge-success">Good</span></td></tr>
+                <tr><td>Joshua Bautista</td><td class="num">28</td><td class="num">12</td><td class="num">70%</td><td><span class="badge badge-warning">Needs Improvement</span></td></tr>
+                <tr><td>Nadine Cruz</td><td class="num">34</td><td class="num">6</td><td class="num">85%</td><td><span class="badge badge-success">Good</span></td></tr>
+                <tr><td>Samuel Aquino</td><td class="num">37</td><td class="num">3</td><td class="num">93%</td><td><span class="badge badge-success">Good</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ UPLOAD MATERIALS ============ -->
+      <section id="materials">
+        <div class="card">
+          <div class="card-title">
+            <div>
+              <h2>Upload Materials</h2>
+              <p class="muted small" style="margin:4px 0 0">Share PDF reviewers and modules with Grade 12 &ndash; Aquarius.</p>
+            </div>
+            <button class="btn btn-primary btn-sm" id="uploadMaterialBtn">Upload PDF</button>
+          </div>
+
+          <div class="alert alert-info" style="margin-bottom:14px">
+            <span>&#9636;</span>
+            <div><strong>Visual mockup only</strong>Files are not actually uploaded in this prototype &mdash; clicking the button shows a confirmation toast.</div>
+          </div>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>File Name</th>
+                  <th>Subject</th>
+                  <th>Date Shared</th>
+                  <th>Downloads</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>PR2_Module1_Quarter1.pdf</td>
+                  <td>Practical Research 2</td>
+                  <td>Oct 2, 2026</td>
+                  <td class="num">24</td>
+                  <td><button class="btn btn-outline btn-sm" data-toast="Download is a visual mockup in this prototype.">Download</button></td>
+                </tr>
+                <tr>
+                  <td>Reviewer_Quarter1_PR2.pdf</td>
+                  <td>Practical Research 2</td>
+                  <td>Oct 9, 2026</td>
+                  <td class="num">18</td>
+                  <td><button class="btn btn-outline btn-sm" data-toast="Download is a visual mockup in this prototype.">Download</button></td>
+                </tr>
+                <tr>
+                  <td>Remedial_Lesson_PR2.pdf</td>
+                  <td>Practical Research 2</td>
+                  <td>Oct 13, 2026</td>
+                  <td class="num">7</td>
+                  <td><button class="btn btn-outline btn-sm" data-toast="Download is a visual mockup in this prototype.">Download</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+</div>
+
+<div id="toast" class="toast"></div>
+
+<script>
+  /* ---------- Toast helper ---------- */
+  var toastTimer;
+  function showToast(message, kind) {
+    var toast = document.getElementById('toast');
+    toast.textContent = message;
+    toast.className = 'toast show' + (kind ? ' ' + kind : '');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () { toast.className = 'toast'; }, 2600);
+  }
+
+  /* ---------- RBAC guard: other roles never see this dashboard ---------- */
+  (function () {
+    var role = sessionStorage.getItem('fepcRole');
+    var home = {
+      teacher: 'teacher-dashboard.html',
+      administrator: 'admin-dashboard.html',
+      student: 'student-portal.html',
+      parent: 'parent-portal.html'
+    };
+    if (role && role !== 'teacher') {
+      window.location.replace(home[role] || 'index.html');
+    }
+    var name = sessionStorage.getItem('fepcName');
+    if (name) {
+      document.querySelector('[data-user-name]').textContent = name;
+      var initials = name.split(' ').map(function (w) { return w.charAt(0); }).slice(0, 2).join('');
+      document.querySelector('[data-user-initials]').textContent = initials;
+    }
+  })();
+
+  /* ---------- Sidebar active state ---------- */
+  document.querySelectorAll('.nav-link[href^="#"]').forEach(function (link) {
+    link.addEventListener('click', function () {
+      document.querySelectorAll('.sidebar-nav .nav-link').forEach(function (l) { l.classList.remove('active'); });
+      link.classList.add('active');
+    });
+  });
+
+  /* ---------- Generic toast buttons ---------- */
+  document.querySelectorAll('[data-toast]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      showToast(btn.getAttribute('data-toast'), 'success');
+    });
+  });
+
+  document.getElementById('uploadPdfBtn').addEventListener('click', function () {
+    showToast('Upload PDF is a visual mockup in this prototype.', 'warning');
+  });
+  document.getElementById('uploadMaterialBtn').addEventListener('click', function () {
+    showToast('PR2_Module1.pdf uploaded (mockup only)!', 'success');
+  });
+
+  /* ---------- Auto-Compute final grades ---------- */
+  document.getElementById('autoComputeBtn').addEventListener('click', function () {
+    var rows = document.querySelectorAll('#gradesTable tbody tr');
+    var total = 0;
+    rows.forEach(function (row) {
+      var q1 = parseFloat(row.getAttribute('data-q1'));
+      var q2 = parseFloat(row.getAttribute('data-q2'));
+      var final = Math.round((q1 + q2) / 2);
+      var cell = row.querySelector('.final-cell');
+      cell.textContent = final;
+      cell.className = 'num final-cell ' + (final >= 75 ? 'grade-pass' : 'grade-fail');
+      total += final;
+    });
+    // Same green confirmation as the Save Changes button
+    showToast('Saved successfully!', 'success');
+  });
+</script>
+</body>
+</html>

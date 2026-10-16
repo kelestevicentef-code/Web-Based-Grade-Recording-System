@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parent Portal — FEPC Grade Recorder</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- School header: seal logo top-left + college details -->
+<header class="site-header">
+  <a class="site-identity" href="index.html">
+    <img class="site-logo" src="logo.svg" alt="Far Eastern Polytechnic College seal">
+    <span class="site-lines">
+      <span class="site-name">Far Eastern Polytechnic College</span>
+      <span class="site-meta">Brgy. Sta. Lucia, DB81, Dasmariñas City, Cavite</span>
+      <span class="site-meta">Email: fepceduc2006@gmail.com</span>
+      <span class="site-meta">Contact Number: (046) 683-0541 / 0936-448-9326</span>
+    </span>
+  </a>
+  <span class="site-app">Grade Recorder <span class="badge badge-yellow">S.Y. 2026&ndash;2027</span></span>
+</header>
+
+<div class="app">
+
+  <!-- Role-isolated sidebar: parent sees only their child's pages -->
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <div class="brand-mark">GR</div>
+      <div class="brand-name">Grade Recorder<span>Parent Portal</span></div>
+    </div>
+    <nav class="sidebar-nav">
+      <div class="nav-label">Parent Menu</div>
+      <a class="nav-link active" href="#grades"><span class="ico">&#9733;</span> Child's Grades</a>
+      <a class="nav-link" href="#attendance"><span class="ico">&#10003;</span> Attendance</a>
+      <a class="nav-link" href="#alerts"><span class="ico">&#9888;</span> Alerts</a>
+    </nav>
+    <div class="sidebar-footer">
+      <a class="nav-link" href="index.html"><span class="ico">&#8592;</span> Logout</a>
+    </div>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <div class="topbar-title">Parent Portal</div>
+      <div class="topbar-right">
+        <div class="user-meta">
+          <span class="user-name" data-user-name>Roberto Dela Cruz</span>
+          <span class="badge">Parent</span>
+        </div>
+        <div class="avatar" data-user-initials>RD</div>
+        <a class="btn btn-outline btn-sm" href="index.html">Logout</a>
+      </div>
+    </header>
+
+    <main class="content">
+
+      <!-- ============ CHILD SUMMARY ============ -->
+      <div class="page-head">
+        <h1>Child's Academic Record</h1>
+        <p>Read-only view of your registered child only &middot; S.Y. 2026&ndash;2027</p>
+      </div>
+
+      <div class="card">
+        <div class="summary-row">
+          <div class="summary-item">
+            <div class="label">Child</div>
+            <div class="value">Juan Dela Cruz</div>
+          </div>
+          <div class="summary-item">
+            <div class="label">Section</div>
+            <div class="value">Grade 12 &ndash; Aquarius</div>
+          </div>
+          <div class="summary-item">
+            <div class="label">Adviser</div>
+            <div class="value">Mark Villanueva</div>
+          </div>
+          <div class="summary-item">
+            <div class="label">General Average</div>
+            <div class="value">84.0</div>
+          </div>
+          <div class="summary-item">
+            <div class="label">Attendance</div>
+            <div class="value">95%</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="alert alert-warning" style="margin-bottom:20px">
+        <span>&#9888;</span>
+        <div>
+          <strong>Warning: Juan's Practical Research 2 grade dropped below 75.</strong>
+          Previous quarter: 78 &rarr; Current: 72. Please coordinate with the adviser,
+          Mr. Mark Villanueva, about remedial activities.
+        </div>
+      </div>
+
+      <!-- ============ CHILD'S GRADES (read-only) ============ -->
+      <section id="grades">
+        <div class="card">
+          <div class="card-title">
+            <div>
+              <h2>Juan's Grades &mdash; First Quarter</h2>
+              <p class="muted small" style="margin:4px 0 0">Read-only. You can only view your own child's records.</p>
+            </div>
+            <span class="badge">Read-only</span>
+          </div>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Subject</th>
+                  <th>Teacher</th>
+                  <th class="num">Previous</th>
+                  <th class="num">Current</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Practical Research 2</td>
+                  <td>Mark Villanueva</td>
+                  <td class="num">78</td>
+                  <td class="num grade-fail">72</td>
+                  <td><span class="badge badge-warning">Failing</span></td>
+                </tr>
+                <tr>
+                  <td>Contemporary Philippine Arts from the Regions</td>
+                  <td>Grace Fernandez</td>
+                  <td class="num">88</td>
+                  <td class="num grade-pass">91</td>
+                  <td><span class="badge badge-success">Passing</span></td>
+                </tr>
+                <tr>
+                  <td>Understanding Culture, Society and Politics</td>
+                  <td>Divina Ocampo</td>
+                  <td class="num">84</td>
+                  <td class="num grade-pass">85</td>
+                  <td><span class="badge badge-success">Passing</span></td>
+                </tr>
+                <tr>
+                  <td>Physical Education</td>
+                  <td>Rogelio Panganiban</td>
+                  <td class="num">86</td>
+                  <td class="num grade-pass">88</td>
+                  <td><span class="badge badge-success">Passing</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ ATTENDANCE ============ -->
+      <section id="attendance">
+        <div class="card">
+          <div class="card-title">
+            <div>
+              <h2>Juan's Attendance</h2>
+              <p class="muted small" style="margin:4px 0 0">First 40 school days.</p>
+            </div>
+          </div>
+          <div class="summary-row" style="margin-bottom:16px">
+            <div class="summary-item"><div class="label">Days Present</div><div class="value" style="color:var(--success)">38</div></div>
+            <div class="summary-item"><div class="label">Days Absent</div><div class="value" style="color:var(--warning)">2</div></div>
+            <div class="summary-item"><div class="label">Attendance Rate</div><div class="value">95%</div></div>
+            <div class="summary-item"><div class="label">Late Arrivals</div><div class="value">1</div></div>
+          </div>
+          <ul class="notif-list">
+            <li><span class="notif-dot read"></span><div><strong>Oct 7, 2026</strong> &mdash; Excused absence (medical certificate submitted)</div></li>
+            <li><span class="notif-dot read"></span><div><strong>Sep 22, 2026</strong> &mdash; Unexcused absence</div></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ============ ALERTS ============ -->
+      <section id="alerts">
+        <div class="card">
+          <div class="card-title">
+            <div>
+              <h2>Email Alerts</h2>
+              <p class="muted small" style="margin:4px 0 0">Parent email alert system &mdash; visual mockup of the settings toggle.</p>
+            </div>
+            <span class="badge badge-success" id="alertStatusBadge">Enabled</span>
+          </div>
+
+          <div class="toggle-row">
+            <div>
+              <strong>Receive alerts for absences or failing performance.</strong>
+              <div class="muted small">Sends an email to roberto.delacruz@example.com whenever Juan is absent or a grade falls below 75.</div>
+            </div>
+            <label class="switch">
+              <input type="checkbox" id="alertToggle" checked>
+              <span class="slider"></span>
+            </label>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-title">
+            <div><h2>Alert History</h2></div>
+          </div>
+          <ul class="notif-list">
+            <li>
+              <span class="notif-dot"></span>
+              <div>
+                <strong>Warning: Juan's Practical Research 2 grade dropped below 75.</strong>
+                <div class="notif-time">Emailed to roberto.delacruz@example.com &middot; Oct 14, 2026, 7:35 AM</div>
+              </div>
+            </li>
+            <li>
+              <span class="notif-dot read"></span>
+              <div>
+                <strong>Absence notice: Juan was absent on Sep 22, 2026.</strong>
+                <div class="notif-time">Emailed to roberto.delacruz@example.com &middot; Sep 22, 2026, 8:10 AM</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+    </main>
+  </div>
+</div>
+
+<div id="toast" class="toast"></div>
+
+<script>
+  var toastTimer;
+  function showToast(message, kind) {
+    var toast = document.getElementById('toast');
+    toast.textContent = message;
+    toast.className = 'toast show' + (kind ? ' ' + kind : '');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () { toast.className = 'toast'; }, 2600);
+  }
+
+  /* ---------- RBAC guard: parents only stay on the parent portal ---------- */
+  (function () {
+    var role = sessionStorage.getItem('fepcRole');
+    var home = {
+      teacher: 'teacher-dashboard.html',
+      administrator: 'admin-dashboard.html',
+      student: 'student-portal.html',
+      parent: 'parent-portal.html'
+    };
+    if (role && role !== 'parent') {
+      window.location.replace(home[role] || 'index.html');
+    }
+    var name = sessionStorage.getItem('fepcName');
+    if (name) {
+      document.querySelectorAll('[data-user-name]').forEach(function (el) { el.textContent = name; });
+      var initials = name.split(' ').map(function (w) { return w.charAt(0); }).slice(0, 2).join('');
+      document.querySelector('[data-user-initials]').textContent = initials;
+    }
+  })();
+
+  document.querySelectorAll('.nav-link[href^="#"]').forEach(function (link) {
+    link.addEventListener('click', function () {
+      document.querySelectorAll('.sidebar-nav .nav-link').forEach(function (l) { l.classList.remove('active'); });
+      link.classList.add('active');
+    });
+  });
+
+  /* ---------- Email alerts toggle (visual only) ---------- */
+  document.getElementById('alertToggle').addEventListener('change', function () {
+    var badge = document.getElementById('alertStatusBadge');
+    if (this.checked) {
+      badge.textContent = 'Enabled';
+      badge.className = 'badge badge-success';
+      showToast('Email alerts enabled. Saved successfully!', 'success');
+    } else {
+      badge.textContent = 'Disabled';
+      badge.className = 'badge badge-warning';
+      showToast('Email alerts disabled.', 'warning');
+    }
+  });
+</script>
+</body>
+</html>

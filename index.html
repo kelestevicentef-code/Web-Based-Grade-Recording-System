@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login — FEPC Grade Recorder</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="login-page">
+
+  <!-- School header: seal logo top-left + college details -->
+  <header class="site-header">
+    <a class="site-identity" href="index.html">
+      <img class="site-logo" src="logo.svg" alt="Far Eastern Polytechnic College seal">
+      <span class="site-lines">
+        <span class="site-name">Far Eastern Polytechnic College</span>
+        <span class="site-meta">Brgy. Sta. Lucia, DB81, Dasmariñas City, Cavite</span>
+        <span class="site-meta">Email: fepceduc2006@gmail.com</span>
+        <span class="site-meta">Contact Number: (046) 683-0541 / 0936-448-9326</span>
+      </span>
+    </a>
+    <span class="site-app">Grade Recorder <span class="badge badge-yellow">S.Y. 2026&ndash;2027</span></span>
+  </header>
+
+  <div class="login-body">
+    <div class="login-card">
+      <h1>Grade Recorder</h1>
+      <p class="login-sub">Web-Based Grade Recording System<br>Sign in with your school account</p>
+
+      <form id="loginForm" novalidate>
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" placeholder="e.g. mark.villanueva" autocomplete="username">
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="Enter your password" autocomplete="current-password">
+        </div>
+
+        <div class="form-group">
+          <label for="role">Login as</label>
+          <select id="role">
+            <option value="teacher">Teacher</option>
+            <option value="administrator">Administrator</option>
+            <option value="student">Student</option>
+            <option value="parent">Parent / Guardian</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">Login</button>
+      </form>
+
+      <div class="login-hint">
+        <strong>Prototype note:</strong> this is a static mockup. Any username and
+        password will work — choose a role above and you will be redirected to that
+        role's dashboard.
+      </div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast"></div>
+
+  <script>
+    // Role → dashboard mapping (RBAC: each role lands on its own page)
+    var DESTINATIONS = {
+      teacher:     { page: 'teacher-dashboard.html', name: 'Mark Villanueva',  label: 'Teacher' },
+      administrator:{ page: 'admin-dashboard.html',  name: 'Lorna Bautista',  label: 'Administrator' },
+      student:     { page: 'student-portal.html',    name: 'Juan Dela Cruz',   label: 'Student' },
+      parent:      { page: 'parent-portal.html',     name: 'Roberto Dela Cruz',label: 'Parent' }
+    };
+
+    var toastTimer;
+    function showToast(message, kind) {
+      var toast = document.getElementById('toast');
+      toast.textContent = message;
+      toast.className = 'toast show' + (kind ? ' ' + kind : '');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(function () { toast.className = 'toast'; }, 2600);
+    }
+
+    document.getElementById('loginForm').addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      var username = document.getElementById('username').value.trim();
+      var password = document.getElementById('password').value.trim();
+      var role = document.getElementById('role').value;
+
+      if (!username || !password) {
+        showToast('Please enter your username and password.', 'warning');
+        return;
+      }
+
+      var dest = DESTINATIONS[role];
+      // Remember the selected role for the mockup session
+      sessionStorage.setItem('fepcRole', role);
+      sessionStorage.setItem('fepcName', dest.name);
+      sessionStorage.setItem('fepcRoleLabel', dest.label);
+
+      showToast('Login successful! Redirecting…', 'success');
+      setTimeout(function () { window.location.href = dest.page; }, 500);
+    });
+  </script>
+</body>
+</html>

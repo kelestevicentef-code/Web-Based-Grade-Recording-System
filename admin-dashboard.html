@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Administrator Dashboard — FEPC Grade Recorder</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- School header: seal logo top-left + college details -->
+<header class="site-header">
+  <a class="site-identity" href="index.html">
+    <img class="site-logo" src="logo.svg" alt="Far Eastern Polytechnic College seal">
+    <span class="site-lines">
+      <span class="site-name">Far Eastern Polytechnic College</span>
+      <span class="site-meta">Brgy. Sta. Lucia, DB81, Dasmariñas City, Cavite</span>
+      <span class="site-meta">Email: fepceduc2006@gmail.com</span>
+      <span class="site-meta">Contact Number: (046) 683-0541 / 0936-448-9326</span>
+    </span>
+  </a>
+  <span class="site-app">Grade Recorder <span class="badge badge-yellow">S.Y. 2026&ndash;2027</span></span>
+</header>
+
+<div class="app">
+
+  <!-- Role-isolated sidebar: admin links only (incl. Activity Log) -->
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <div class="brand-mark">GR</div>
+      <div class="brand-name">Grade Recorder<span>Administrator Portal</span></div>
+    </div>
+    <nav class="sidebar-nav">
+      <div class="nav-label">Administrator Menu</div>
+      <a class="nav-link active" href="#overview"><span class="ico">&#9632;</span> Overview</a>
+      <a class="nav-link" href="#teachers"><span class="ico">&#9635;</span> Teacher Accounts</a>
+      <a class="nav-link" href="#students"><span class="ico">&#9636;</span> Student Accounts</a>
+      <a class="nav-link" href="#sections"><span class="ico">&#9637;</span> Class Sections</a>
+      <a class="nav-link" href="#activity"><span class="ico">&#9638;</span> Activity Log</a>
+    </nav>
+    <div class="sidebar-footer">
+      <a class="nav-link" href="index.html"><span class="ico">&#8592;</span> Logout</a>
+    </div>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <div class="topbar-title">Administrator Dashboard</div>
+      <div class="topbar-right">
+        <div class="user-meta">
+          <span class="user-name" data-user-name>Lorna Bautista</span>
+          <span class="badge">Administrator</span>
+        </div>
+        <div class="avatar" data-user-initials>LB</div>
+        <a class="btn btn-outline btn-sm" href="index.html">Logout</a>
+      </div>
+    </header>
+
+    <main class="content">
+
+      <!-- ============ OVERVIEW ============ -->
+      <section id="overview">
+        <div class="page-head">
+          <h1>School Overview</h1>
+          <p>Far Eastern Polytechnic College &middot; S.Y. 2026&ndash;2027 &middot; First Semester</p>
+        </div>
+
+        <div class="stat-grid">
+          <div class="stat-card">
+            <div class="stat-label">Total Students</div>
+            <div class="stat-value">486</div>
+            <div class="stat-note">+12 newly enrolled this quarter</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Total Teachers</div>
+            <div class="stat-value">24</div>
+            <div class="stat-note">All accounts active</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Active Classes</div>
+            <div class="stat-value">18</div>
+            <div class="stat-note">Across 6 grade levels</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Students At Risk</div>
+            <div class="stat-value" style="color:var(--warning)">31</div>
+            <div class="stat-note">Flagged by AI insights</div>
+          </div>
+        </div>
+
+        <div class="card ai-card">
+          <div class="card-title">
+            <div>
+              <span class="ai-tag">&#10022; System Status</span>
+              <h2>Grade Recording Health</h2>
+            </div>
+          </div>
+          <p class="ai-text">16 of 18 active classes have finalized first-quarter grades. <strong>Grade 12 &ndash; Aquarius</strong> and <strong>Grade 12 &ndash; Sagittarius</strong> are still pending finalization.</p>
+        </div>
+      </section>
+
+      <!-- ============ TEACHER ACCOUNTS ============ -->
+      <section id="teachers">
+        <div class="card">
+          <div class="card-title">
+            <div><h2>Teacher Accounts</h2></div>
+            <button class="btn btn-primary btn-sm" data-toast="Saved successfully!">+ Add Teacher</button>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Teacher</th>
+                  <th>Username</th>
+                  <th>Subjects / Sections</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Mark Villanueva</td>
+                  <td>mark.villanueva</td>
+                  <td>Practical Research 2 (G12-Aquarius, G12-Libra)</td>
+                  <td><span class="badge badge-success">Active</span></td>
+                  <td><button class="btn btn-outline btn-sm" data-toast="Edit form is a visual mockup.">Edit</button></td>
+                </tr>
+                <tr>
+                  <td>Divina Ocampo</td>
+                  <td>divina.ocampo</td>
+                  <td>Understanding Culture, Society and Politics (G12-Aquarius, G12-Libra)</td>
+                  <td><span class="badge badge-success">Active</span></td>
+                  <td><button class="btn btn-outline btn-sm" data-toast="Edit form is a visual mockup.">Edit</button></td>
+                </tr>
+                <tr>
+                  <td>Grace Fernandez</td>
+                  <td>grace.fernandez</td>
+                  <td>Contemporary Philippine Arts from the Regions (G12-Aquarius, G12-Sagittarius)</td>
+                  <td><span class="badge badge-success">Active</span></td>
+                  <td><button class="btn btn-outline btn-sm" data-toast="Edit form is a visual mockup.">Edit</button></td>
+                </tr>
+                <tr>
+                  <td>Rogelio Panganiban</td>
+                  <td>rogelio.p</td>
+                  <td>Physical Education (G12-Aquarius, G12-Capricorn)</td>
+                  <td><span class="badge badge-warning">Deactivated</span></td>
+                  <td><button class="btn btn-outline btn-sm" data-toast="Edit form is a visual mockup.">Edit</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ STUDENT ACCOUNTS ============ -->
+      <section id="students">
+        <div class="card">
+          <div class="card-title">
+            <div><h2>Student Accounts</h2></div>
+            <button class="btn btn-primary btn-sm" data-toast="Saved successfully!">+ Add Student</button>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Student</th>
+                  <th>Username</th>
+                  <th>Section</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Juan Dela Cruz</td>
+                  <td>juan.delacruz</td>
+                  <td>Grade 12 &ndash; Aquarius</td>
+                  <td><span class="badge badge-success">Active</span></td>
+                  <td><button class="btn btn-outline btn-sm" data-toast="Edit form is a visual mockup.">Edit</button></td>
+                </tr>
+                <tr>
+                  <td>Maria Santos</td>
+                  <td>maria.santos</td>
+                  <td>Grade 12 &ndash; Aquarius</td>
+                  <td><span class="badge badge-success">Active</span></td>
+                  <td><button class="btn btn-outline btn-sm" data-toast="Edit form is a visual mockup.">Edit</button></td>
+                </tr>
+                <tr>
+                  <td>Pedro Reyes</td>
+                  <td>pedro.reyes</td>
+                  <td>Grade 12 &ndash; Aquarius</td>
+                  <td><span class="badge badge-success">Active</span></td>
+                  <td><button class="btn btn-outline btn-sm" data-toast="Edit form is a visual mockup.">Edit</button></td>
+                </tr>
+                <tr>
+                  <td>Angel Garcia</td>
+                  <td>angel.garcia</td>
+                  <td>Grade 12 &ndash; Libra</td>
+                  <td><span class="badge badge-success">Active</span></td>
+                  <td><button class="btn btn-outline btn-sm" data-toast="Edit form is a visual mockup.">Edit</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ CLASS SECTIONS ============ -->
+      <section id="sections">
+        <div class="card">
+          <div class="card-title">
+            <div><h2>Class Sections</h2></div>
+            <button class="btn btn-primary btn-sm" data-toast="Saved successfully!">+ Add Section</button>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Section</th>
+                  <th>Adviser</th>
+                  <th class="num">Students</th>
+                  <th>Subjects Encoded</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Grade 12 &ndash; Aquarius</td>
+                  <td>Mark Villanueva</td>
+                  <td class="num">7</td>
+                  <td>5 of 8</td>
+                  <td><span class="badge badge-warning">Pending</span></td>
+                </tr>
+                <tr>
+                  <td>Grade 12 &ndash; Libra</td>
+                  <td>Divina Ocampo</td>
+                  <td class="num">42</td>
+                  <td>8 of 8</td>
+                  <td><span class="badge badge-success">Finalized</span></td>
+                </tr>
+                <tr>
+                  <td>Grade 12 &ndash; Sagittarius</td>
+                  <td>Grace Fernandez</td>
+                  <td class="num">38</td>
+                  <td>6 of 8</td>
+                  <td><span class="badge badge-warning">Pending</span></td>
+                </tr>
+                <tr>
+                  <td>Grade 12 &ndash; Capricorn</td>
+                  <td>Rogelio Panganiban</td>
+                  <td class="num">35</td>
+                  <td>8 of 8</td>
+                  <td><span class="badge badge-success">Finalized</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ ACTIVITY LOG (admin only) ============ -->
+      <section id="activity">
+        <div class="card">
+          <div class="card-title">
+            <div>
+              <h2>Recent Activity Log</h2>
+              <p class="muted small" style="margin:4px 0 0">Grade changes and performance-drop alerts &mdash; visible to Administrators only.</p>
+            </div>
+            <button class="btn btn-outline btn-sm" data-toast="Log exported (visual mockup only).">Export Log</button>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Timestamp</th>
+                  <th>User</th>
+                  <th>Activity</th>
+                  <th>Type</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Oct 14, 2026 &middot; 7:32 AM</td>
+                  <td>Teacher Mark</td>
+                  <td>Teacher Mark changed <strong>Juan Dela Cruz's</strong> Practical Research 2 Quiz 2 from 74 to 66</td>
+                  <td><span class="badge badge-warning">Grade Change</span></td>
+                </tr>
+                <tr>
+                  <td>Oct 13, 2026 &middot; 4:10 PM</td>
+                  <td>Teacher Mark</td>
+                  <td>Teacher Mark changed <strong>Maria Santos's</strong> Practical Research 2 Quiz 1 from 85 to 90</td>
+                  <td><span class="badge badge-warning">Grade Change</span></td>
+                </tr>
+                <tr>
+                  <td>Oct 13, 2026 &middot; 3:55 PM</td>
+                  <td>System</td>
+                  <td>Performance drop flagged: <strong>Juan Dela Cruz</strong> fell below 75 in Practical Research 2</td>
+                  <td><span class="badge badge-warning">Performance Drop</span></td>
+                </tr>
+                <tr>
+                  <td>Oct 13, 2026 &middot; 9:02 AM</td>
+                  <td>Teacher Mark</td>
+                  <td>Uploaded <strong>Remedial_Lesson_PR2.pdf</strong> to Grade 12 &ndash; Aquarius</td>
+                  <td><span class="badge">Material</span></td>
+                </tr>
+                <tr>
+                  <td>Oct 12, 2026 &middot; 1:20 PM</td>
+                  <td>Admin Lorna</td>
+                  <td>Created class section <strong>Grade 12 &ndash; Sagittarius</strong></td>
+                  <td><span class="badge">Account / Section</span></td>
+                </tr>
+                <tr>
+                  <td>Oct 11, 2026 &middot; 8:45 AM</td>
+                  <td>Admin Lorna</td>
+                  <td>Deactivated teacher account <strong>rogelio.p</strong></td>
+                  <td><span class="badge">Account / Section</span></td>
+                </tr>
+                <tr>
+                  <td>Oct 10, 2026 &middot; 10:15 AM</td>
+                  <td>Teacher Divina</td>
+                  <td>Finalized first-quarter grades for <strong>Grade 12 &ndash; Libra</strong></td>
+                  <td><span class="badge badge-success">Finalize</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+</div>
+
+<div id="toast" class="toast"></div>
+
+<script>
+  var toastTimer;
+  function showToast(message, kind) {
+    var toast = document.getElementById('toast');
+    toast.textContent = message;
+    toast.className = 'toast show' + (kind ? ' ' + kind : '');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () { toast.className = 'toast'; }, 2600);
+  }
+
+  /* ---------- RBAC guard: only admins stay on this page ---------- */
+  (function () {
+    var role = sessionStorage.getItem('fepcRole');
+    var home = {
+      teacher: 'teacher-dashboard.html',
+      administrator: 'admin-dashboard.html',
+      student: 'student-portal.html',
+      parent: 'parent-portal.html'
+    };
+    if (role && role !== 'administrator') {
+      window.location.replace(home[role] || 'index.html');
+    }
+    var name = sessionStorage.getItem('fepcName');
+    if (name) {
+      document.querySelectorAll('[data-user-name]').forEach(function (el) { el.textContent = name; });
+      var initials = name.split(' ').map(function (w) { return w.charAt(0); }).slice(0, 2).join('');
+      document.querySelector('[data-user-initials]').textContent = initials;
+    }
+  })();
+
+  document.querySelectorAll('.nav-link[href^="#"]').forEach(function (link) {
+    link.addEventListener('click', function () {
+      document.querySelectorAll('.sidebar-nav .nav-link').forEach(function (l) { l.classList.remove('active'); });
+      link.classList.add('active');
+    });
+  });
+
+  document.querySelectorAll('[data-toast]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      showToast(btn.getAttribute('data-toast'), 'success');
+    });
+  });
+</script>
+</body>
+</html>
